@@ -60,8 +60,8 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
  · cd到vue-zeta目录下, 接着输入:npm i 安装vue-zeta项目相关依赖;
 
 3 修改vue项目配置
- · 找到zeta/vue-zeta/config/index.js文件修改相关配置
- · 这样vue项目用webpack打包生成的www目录会指向Cordova项目的www目录，vue项目打包后的静态资源替代cordova的前端资源。
+  · 找到zeta/vue-zeta/config/index.js文件修改相关配置
+  · 这样vue项目用webpack打包生成的www目录会指向Cordova项目的www目录，vue项目打包后的静态资源替代cordova的前端资源。
   · path.resolve(__dirname, '../dist/index.html') 改为 path.resolve(__dirname, '../../www/index.html');
   · path.resolve(__dirname, '../dist') 改为 path.resolve(__dirname, '../../www');
   · assetsPublicPath: '/' 改为 assetsPublicPath: './'
