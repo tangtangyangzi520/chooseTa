@@ -25,7 +25,7 @@ $ 控制台输入: npm install -g vue; 输入: vue --version,输出: 2.x.x,则�
 # 安装vue-cli(这里安装的是2.x.x版本)
 $ 控制台输入: npm install -g vue-cli; 输入:vue cli -V,输出: 2.x.x,则表示vue-cli安装成功。
 
-至此，上面已经搭建好一个Cordova+Vue的开发环境，下面可以开始创建一个Demo项目了。
+至此，上面已经安装好一个Cordova+Vue的相关环境，下面可以开始创建一个Demo项目了。
 
 # 安装java jdk
 $ 官网: http://java.sun.com/javase/downloads/index.jsp, 找到1.8.0系列下载对应平台的安装包
@@ -45,3 +45,38 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 
 # IDEA安装(非必需)
 ```
+
+### 项目搭建
+
+```
+# 1. 创建Cordova项目
+$ 控制台输入: cordova create zeta com.zetatest.demo zeta;
+ · zeta是项目名, com.zetatest.demo即android的包名，ios的bundle id; zeta为安装app的名称;
+ ·  等待命令执行完毕后, 接着输入: npm i安装cordova项目相关依赖;
+$ 删除 zeta/www 目录下的css、img、js文件夹;
+
+# 2 创建vue项目
+$ 进入zeta项目的根目录下，在控制台输入: vue init webpack vue-zeta, 然后一路选Y即可;
+·  cd到vue-zeta目录下, 接着输入:npm i 安装vue-zeta项目相关依赖;
+
+3 修改vue项目配置
+#
+$
+
+4 浏览器调式
+#
+$
+
+5 打包apk
+#
+$
+
+6 打包ipa
+#
+$
+
+```
+
+### 结语
+
+按照上述的步骤，cordova + vue 的环境搭建，开发调式以及打包流程已经全部完成。请开始你的表演～
