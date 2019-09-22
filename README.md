@@ -32,6 +32,10 @@ $ 官网: http://java.sun.com/javase/downloads/index.jsp, 找到1.8.0系列下�
 # 配置环境变量:
 $ JAVA_HOME:D:\Java\jdk1.8.0_91
 $ PATH:%JAVA_HOME%\bin CLASSPATH:.;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar 具体配置请百度
+$ Max OS上Java环境变量配置
+ · Step 1 终端输入/usr/libexec/java_home查看jdk目录，我的电脑输出 /Library/Java/JavaVirtualMachines/jdk1.8.0_171.jdk/Contents/Home;
+ cd ~vi .bash_profile
+ vi 命令基本使用 https://www.cnblogs.com/fanxiaocong/p/7070130.html
 
 # 安装Android Studio(也可单独安装SDK和gradle)
 $ 官网: 进入http://www.android-studio.org/,选择AndroidStudio 3.0版本下载安装;
@@ -109,7 +113,10 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 ### Cordova 相关命令汇总收集
 
 ```
-# 安装
+· 查看是否满足构建cordova环境：cordova requirements
+· 查看模拟器列表 cordova run --list
+· 运行环境 cordova run ios/android
+· 打包环境 cordova build ios/android
 ```
 
 ### 其他
