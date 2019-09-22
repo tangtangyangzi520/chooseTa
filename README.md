@@ -50,33 +50,36 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 
 ```
 # 1. 创建Cordova项目
-
-$ 控制台输入: cordova create zeta com.zetatest.demo zeta;
+ · 控制台输入: cordova create zeta com.zetatest.demo zeta;
  · zeta是项目名, com.zetatest.demo即android的包名，ios的bundle id; zeta为安装app的名称;
  · 等待命令执行完毕后, 接着输入: npm i安装cordova项目相关依赖;
-$ 删除 zeta/www 目录下的css、img、js文件夹;
+ · 删除 zeta/www 目录下的css、img、js文件夹;
 
 # 2 创建vue项目
+ · 进入zeta项目的根目录下，在控制台输入: vue init webpack vue-zeta, 然后一路选Y即可;
+ · cd到vue-zeta目录下, 接着输入:npm i 安装vue-zeta项目相关依赖;
 
-$ 进入zeta项目的根目录下，在控制台输入: vue init webpack vue-zeta, 然后一路选Y即可;
-· cd到vue-zeta目录下, 接着输入:npm i 安装vue-zeta项目相关依赖;
+# 3 修改vue项目配置
+ · 找到zeta/vue-zeta/config/index.js文件修改相关配置
+ · 这样vue项目用webpack打包生成的www目录会指向Cordova项目的www目录，vue项目打包后的静态资源替代cordova的前端资源。
+  · path.resolve(__dirname, '../dist/index.html') 改为 path.resolve(__dirname, '../../www/index.html');
+  · path.resolve(__dirname, '../dist') 改为 path.resolve(__dirname, '../../www');
+  · assetsPublicPath: '/' 改为 assetsPublicPath: './'
 
-3 修改vue项目配置
-#
-$
+  · 找到zeta/vue-zeta/build/utils.js文件修改相关配置
+  · 找到fallback: 'vue-style-loader'在后面添加 publicPath: '../../'这样的一段
+  · 接着在zeta/vue-zeta目录下, 执行: npm run build;在zeta/www/目录下生成static目录和index.html;
+  · 双击index.html, 可以看到运行的是vue项目的页面;
 
-4 浏览器调式
-#
-$
+# 4 浏览器调式
+  · 在zeta/vue-zeta目录下, 执行: npm run dev;
+  · 复制下图的地址，在浏览器打开，即可开始调式;
+  · 只要修改vue项目里的vue文件，即可触发浏览器的刷新，修改效果会立刻在浏览器上更新，相对于原生的开发调式，效率高很多。
+  · vue开发阶段浏览器试可下载vue官方提供的浏览器插件调试即可;
 
-5 打包apk
-#
-$
-
-6 打包ipa
-#
-$
-
+# 5 打包apk/ipa
+  · 在zeta根目录下, 执行: cordova platform add android/ios 添加相关平台;
+  · 具体操作请百度相关步骤;
 ```
 
 ### 结语
