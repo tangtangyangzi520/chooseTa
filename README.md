@@ -148,3 +148,5 @@ Xcode打开IOS项目
 <key>NSAppleMusicUsageDescription</key>
 <string>App需要您的同意,才能访问媒体资料库</string>
 ```
+
+- Cordova 一些问题和使用：https://juejin.im/post/5aa78ff4518825558a064a15
