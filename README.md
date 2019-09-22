@@ -85,3 +85,66 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 ### 结语
 
 按照上述的步骤，cordova + vue 的环境搭建，开发调式以及打包流程已经全部完成。请开始你的表演～
+
+### Cordova 相关插件
+
+- 消息推送: cordova-plugin-local-notification
+  · 参考文章：https://www.imooc.com/article/27709
+  · 参考文章：https://blog.csdn.net/m0_37603385/article/details/92796797
+
+- 热更新: add cordova-hot-code-push-plugin
+  · cordova-hot-code-push-cli 用于编译项目文件，生成对应的 hash 码
+  · 参考文章：https://www.imooc.com/article/26119
+
+- 启动页插件和状态栏: cordova-plugin-splashscreen/cordova-plugin-statusbar
+  · 参考文章：https://juejin.im/post/5c91d56de51d45397e3d0075
+  · 参考文章：https://juejin.im/post/5ce838cee51d4510803ce334
+
+- 打开本地文件: cordova-plugin-file-opener2
+  · 参考文章：https://juejin.im/post/5cdacca9f265da03a00ff375
+
+- 开发 app-webview 遇到的 ios 兼容性解决方案
+  · 参考文章：https://juejin.im/post/5bfbac54e51d450d566f22c1
+
+### Cordova 相关命令汇总收集
+
+```
+# 安装
+```
+
+### 其他
+
+- Cordova 开发 IOS-部分权限配置
+
+```
+Xcode打开IOS项目
+在项目总目录中找到Resources/<项目名>-info.plist文件
+右键选择Open As Source Code
+在<dict></dict>节点输入以下内容
+<key>NSPhotoLibraryUsageDescription</key>
+<string>App需要您的同意,才能访问相册</string>
+<key>NSCameraUsageDescription</key>
+<string>App需要您的同意,才能访问相机</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>App需要您的同意,才能访问麦克风</string>
+<key>NSLocationUsageDescription</key>
+<string>App需要您的同意,才能访问位置</string>
+<key>NSLocationWhenInUseUsageDescription</key>
+<string>App需要您的同意,才能在使用期间访问位置</string>
+<key>NSLocationAlwaysUsageDescription</key>
+<string>App需要您的同意,才能始终访问位置</string>
+<key>NSCalendarsUsageDescription</key>
+<string>App需要您的同意,才能访问日历</string>
+<key>NSRemindersUsageDescription</key>
+<string>App需要您的同意,才能访问提醒事项</string>
+<key>NSMotionUsageDescription</key>
+<string>App需要您的同意,才能访问运动与健身</string>
+<key>NSHealthUpdateUsageDescription</key>
+<string>App需要您的同意,才能访问健康更新</string>
+<key>NSHealthShareUsageDescription</key>
+<string>App需要您的同意,才能访问健康分享</string>
+<key>NSBluetoothPeripheralUsageDescription</key>
+<string>App需要您的同意,才能访问蓝牙</string>
+<key>NSAppleMusicUsageDescription</key>
+<string>App需要您的同意,才能访问媒体资料库</string>
+```
