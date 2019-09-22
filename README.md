@@ -50,14 +50,16 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 
 ```
 # 1. 创建Cordova项目
+
 $ 控制台输入: cordova create zeta com.zetatest.demo zeta;
  · zeta是项目名, com.zetatest.demo即android的包名，ios的bundle id; zeta为安装app的名称;
- ·  等待命令执行完毕后, 接着输入: npm i安装cordova项目相关依赖;
+ · 等待命令执行完毕后, 接着输入: npm i安装cordova项目相关依赖;
 $ 删除 zeta/www 目录下的css、img、js文件夹;
 
 # 2 创建vue项目
+
 $ 进入zeta项目的根目录下，在控制台输入: vue init webpack vue-zeta, 然后一路选Y即可;
-·  cd到vue-zeta目录下, 接着输入:npm i 安装vue-zeta项目相关依赖;
+· cd到vue-zeta目录下, 接着输入:npm i 安装vue-zeta项目相关依赖;
 
 3 修改vue项目配置
 #
