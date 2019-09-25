@@ -1,23 +1,25 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+  <f7-app :params="f7params">
+    <f7-view main url="/"></f7-view>
+  </f7-app>
 </template>
 
 <script>
+/* eslint-disable */
+import routes from './router/index.js';
 export default {
-  name: 'App'
+  data() {
+    return {
+      f7params: {
+        routes:routes,
+        name: 'zeta',
+        id: 'com.zetaApp.test',
+        theme: 'auto'
+      }
+    }
+  }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

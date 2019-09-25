@@ -1,113 +1,53 @@
+
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
-    <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
-      </li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
-  </div>
+  <f7-page :page-content="false">
+    <f7-navbar title="Tabbar" back-link="Back">
+      <f7-nav-right>
+        <f7-link icon-ios="f7:reload" icon-md="material:compare_arrows" @click="isBottom = !isBottom"></f7-link>
+      </f7-nav-right>
+    </f7-navbar>
+    <f7-toolbar tabbar :position="isBottom ? 'bottom' : 'top'">
+      <f7-link tab-link="#tab-1" tab-link-active>Tab 1</f7-link>
+      <f7-link tab-link="#tab-2">Tab 2</f7-link>
+      <f7-link tab-link="#tab-3">Tab 3</f7-link>
+    </f7-toolbar>
+    <f7-tabs>
+      <f7-tab id="tab-1" class="page-content" tab-active>
+        <f7-block>
+          <p>Tab 1 content</p>
+          <div class="heig">Tab 1</div>
+        </f7-block>
+      </f7-tab>
+      <f7-tab id="tab-2" class="page-content">
+        <f7-block>
+          <p>Tab 2 content</p>
+          ...
+        </f7-block>
+      </f7-tab>
+      <f7-tab id="tab-3" class="page-content">
+        <f7-block>
+          <p>Tab 3 content</p>
+          ...
+        </f7-block>
+      </f7-tab>
+    </f7-tabs>
+  </f7-page>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      isBottom: true
     }
   }
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1, h2 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+<style>
+.heig{
+  width: 100%;
+  height: 900px;
+  background: #ddd;
 }
 </style>

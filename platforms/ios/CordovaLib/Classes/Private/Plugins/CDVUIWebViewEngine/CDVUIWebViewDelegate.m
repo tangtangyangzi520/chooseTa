@@ -318,6 +318,13 @@ static NSString *stripFragment(NSString* url)
 
 - (void)webViewDidFinishLoad:(UIWebView*)webView
 {
+    CGFloat webViewHeight=[webView.scrollView contentSize].height;  
+    CGRect newFrame = webView.frame;  
+    newFrame.size.height = webViewHeight;  
+    webView.frame = newFrame;
+
+    [(UIScrollView *)[[webView subviews] objectAtIndex:0] setBounces:NO];
+
     VerboseLog(@"webView didFinishLoad (before). state=%d loadCount=%d", _state, _loadCount);
     BOOL fireCallback = NO;
     switch (_state) {

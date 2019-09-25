@@ -1,4 +1,8 @@
 {
     "UserNotifications.framework": 1,
-    "CoreLocation.framework": 1
+    "CoreLocation.framework": 3,
+    "Security.framework": 1,
+    "CFNetwork.framework": 1,
+    "ImageIO.framework": 1,
+    "AVFoundation.framework": 1
 }

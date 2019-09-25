@@ -28,3 +28,10 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+
+```
+# ui框架 framework7
+http://www.framework7.cn/
+npm install --save framework7-vue
+文章 https://blog.toast38coza.me/building-a-mobile-app-with-vuejs-cordova-webpack-and-framework-7/
+```

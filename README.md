@@ -102,7 +102,7 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 
 - 启动页插件和状态栏: cordova-plugin-splashscreen/cordova-plugin-statusbar
   · 参考文章：https://juejin.im/post/5c91d56de51d45397e3d0075
-  · 参考文章：https://juejin.im/post/5ce838cee51d4510803ce334
+  · 参考文章：https://juejin.im/post/5ce838cee51d4510803ce334 
 
 - 打开本地文件: cordova-plugin-file-opener2
   · 参考文章：https://juejin.im/post/5cdacca9f265da03a00ff375
@@ -120,7 +120,7 @@ $ 打开AppStore, 搜索Xcode下载,点击安装,安装需要AppleID账号。安
 ```
 
 ### 其他
-
+- 谷歌调试 chrome://inspect/#devices
 - Cordova 开发 IOS-部分权限配置
 
 ```
@@ -157,3 +157,20 @@ Xcode打开IOS项目
 ```
 
 - Cordova 一些问题和使用：https://juejin.im/post/5aa78ff4518825558a064a15
+
+### 问题汇总
+
+```
+1  · 使用cordova-plugin-statusbar插件ios上下滑动白屏
+   · 解决方法：
+    在根目录下找到：platforms/ios/CordovaLib/Classes/Private/Plugins/CDVUIWebViewEngine/CDVUIWebViewDelegate.m 修改此文件，在- (void)webViewDidFinishLoad:(UIWebView*)webView{方法中添加以下代码}
+
+    [(UIScrollView *)[[webView subviews] objectAtIndex:0] setBounces:NO];
+
+    CGFloat webViewHeight=[webView.scrollView contentSize].height;  
+    CGRect newFrame = webView.frame;  
+    newFrame.size.height = webViewHeight;  
+    webView.frame = newFrame;
+
+2.
+```

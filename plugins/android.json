@@ -12,13 +12,29 @@
     },
     "cordova-plugin-local-notification": {
       "PACKAGE_NAME": "com.zetatest.demo"
-    }
-  },
-  "dependent_plugins": {
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.zetatest.demo"
+    },
+    "cordova-plugin-camera": {
+      "ANDROID_SUPPORT_V4_VERSION": "27.+",
+      "PACKAGE_NAME": "com.zetatest.demo"
+    },
     "cordova-plugin-device": {
       "PACKAGE_NAME": "com.zetatest.demo"
     },
+    "cordova-plugin-geolocation": {
+      "PACKAGE_NAME": "com.zetatest.demo"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.zetatest.demo"
+    }
+  },
+  "dependent_plugins": {
     "cordova-plugin-badge": {
+      "PACKAGE_NAME": "com.zetatest.demo"
+    },
+    "cordova-plugin-chrome-apps-common": {
       "PACKAGE_NAME": "com.zetatest.demo"
     }
   }
