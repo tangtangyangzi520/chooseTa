@@ -35,3 +35,7 @@ http://www.framework7.cn/
 npm install --save framework7-vue
 文章 https://blog.toast38coza.me/building-a-mobile-app-with-vuejs-cordova-webpack-and-framework-7/
 ```
+
+## 架构功能大纲
+  - i18
+  - 骨架屏
