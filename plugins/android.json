@@ -28,6 +28,12 @@
     },
     "cordova-plugin-splashscreen": {
       "PACKAGE_NAME": "com.zetatest.demo"
+    },
+    "cordova-plugin-media-capture": {
+      "PACKAGE_NAME": "com.zetatest.demo"
+    },
+    "cordova-plugin-globalization": {
+      "PACKAGE_NAME": "com.zetatest.demo"
     }
   },
   "dependent_plugins": {
@@ -35,6 +41,9 @@
       "PACKAGE_NAME": "com.zetatest.demo"
     },
     "cordova-plugin-chrome-apps-common": {
+      "PACKAGE_NAME": "com.zetatest.demo"
+    },
+    "cordova-plugin-file": {
       "PACKAGE_NAME": "com.zetatest.demo"
     }
   }

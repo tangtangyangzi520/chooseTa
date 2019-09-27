@@ -35,13 +35,12 @@
         <splash height="2208" src="res/screen/ios/1242_2208.png" width="1242" />
         <splash height="2436" src="res/screen/ios/1125_2436.png" width="1125" />
     </platform>
-    <platform name="android">  
+    <!-- <platform name="android">  
         <icon density="ldpi" src="res/icon/android/drawable-ldpi/icon.png" />
         <icon density="mdpi" src="res/icon/android/drawable-mdpi/icon.png" />
         <icon density="hdpi" src="res/icon/android/drawable-hdpi/icon.png" />
         <icon density="xhdpi" src="res/icon/android/drawable-xhdpi/icon.png" />
         <icon density="xxhdpi" src="res/icon/android/drawable-xxhdpi/icon.png" />
-        <!-- 以下是欢迎页面，可根据需要进行添加 -->
         <splash density="land-hdpi" src="res/screen/android/splash-land-hdpi.png" />  
         <splash density="land-ldpi" src="res/screen/android/splash-land-ldpi.png" />  
         <splash density="land-mdpi" src="res/screen/android/splash-land-mdpi.png" />  
@@ -50,5 +49,5 @@
         <splash density="port-ldpi" src="res/screen/android/splash-port-ldpi.png" />  
         <splash density="port-mdpi" src="res/screen/android/splash-port-mdpi.png" />  
         <splash density="port-xhdpi" src="res/screen/android/splash-port-xhdpi.png" />  
-    </platform>
+    </platform> -->
 </widget>

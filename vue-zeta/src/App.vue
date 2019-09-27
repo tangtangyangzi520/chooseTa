@@ -7,6 +7,7 @@
 <script>
 /* eslint-disable */
 import routes from './router/index.js';
+import Vue from 'vue'
 export default {
   data() {
     return {
@@ -17,6 +18,16 @@ export default {
         theme: 'auto'
       }
     }
+  },
+  created() {
+    Vue.cordova.on('deviceready', () => {
+      navigator.globalization.getPreferredLanguage(function (language) {          
+          console.log(language + 'language: ' + language.value + '\n');
+      }, function () { 
+          console.log('Error getting language\n'); 
+      });
+    });
+    
   }
 }
 </script>
