@@ -15,7 +15,7 @@
       <f7-tab id="tab-1" class="page-content" tab-active>
         <f7-block>
           <p>Tab 1 content</p>
-          <div class="heig">Tab 1</div>
+          <div class="heig">Tab 1 {{$t('login.username')}}</div>
         </f7-block>
       </f7-tab>
       <f7-tab id="tab-2" class="page-content">

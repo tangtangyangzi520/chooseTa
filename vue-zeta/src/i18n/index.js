@@ -1,8 +1,8 @@
 import Vue from 'Vue'
 import VueI18n from 'vue-i18n'
-import { getStorage, getBrowserLang } from '@/utils'
-import enUS from './en-US'
-import zhCN from './zh-CN'
+import { getStorage, getBrowserLang } from '../utils/storage'
+import enUS from './en-US/en-US'
+import zhCN from './zh-CN/zh-CN'
 
 Vue.use(VueI18n)
 
