@@ -39,3 +39,4 @@ npm install --save framework7-vue
 ## 架构功能大纲
   - i18
   - 骨架屏
+  - 埋点
