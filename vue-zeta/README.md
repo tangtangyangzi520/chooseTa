@@ -40,7 +40,9 @@ npm install --save framework7-vue
   - i18
   - 骨架屏
   - 埋点
-
+```
+buried              // 页面埋点统计
+dps                 // 生成骨架配置
 src
 ├── assets          // 资源目录 图片，样式，iconfont
 ├── components      // 全局通用组件目录
@@ -51,3 +53,4 @@ src
 ├── service         // 服务层
 ├── utils           // 工具类
 └── views           // 视图层
+```
