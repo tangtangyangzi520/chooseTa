@@ -40,6 +40,9 @@ export default {
     return {
       isBottom: true
     }
+  },
+  created: function () {
+    console.log(this.environments)
   }
 }
 </script>
