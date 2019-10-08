@@ -35,6 +35,7 @@
 </template>
 
 <script>
+import { query } from '../service/http/api'
 export default {
   data () {
     return {
@@ -43,6 +44,13 @@ export default {
   },
   created: function () {
     console.log(this.environments)
+  },
+  mounted () {
+    console.log(query)
+    // const params = { userName: 'admin', password: '123456'}
+    // query(params).then(res => {
+    //   console.log(res, '这是响应的结果')
+    // })
   }
 }
 </script>
