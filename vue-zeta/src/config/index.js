@@ -10,7 +10,9 @@ const config = {
       domain: 'http://www.wpdev.com',
       imagePath: 'http://image.wpdev.com'
     },
-    theme: ''
+    theme: '',
+    // http请求超时时间
+    timeout: 200
   },
   development: {
     host: 'localhost',
@@ -31,11 +33,15 @@ const config = {
     },
     baseInfo: {
       chatDomain: 'http://localhost:8050/chat/f',
-      domain: 'http://www.wpdev.com',
+      domain: 'http://localhost:8081/',
       imagePath: 'http://image.wpdev.com'
     },
     // 平台 安卓|ios
-    platforms: crossEnv.platforms
+    platforms: crossEnv.platforms,
+    // http请求超时时间
+    timeout: 200,
+    // 本地开启mock数据模拟
+    devMock: true
   }
 }
 module.exports = config[crossEnv.NODE_ENV] || config['development']

@@ -1,46 +1,51 @@
-import instance from '@/shared/intercept/axios'
-/* 统一封装get请求 */
-export const get = (url, params, config = {}) => {
-  return new Promise((resolve, reject) => {
-    instance({
-      method: 'get',
+import instance from '../../shared/intercept/axios'
+import qs from 'qs'
+/**
+ * 封装get请求
+ * @param { string } url
+ * @param { object } params
+ */
+export const get = (url, params = {}, config) => {
+  return isPromise('get', url, params, config)
+}
+
+/**
+ * 封装post请求
+ * @param { string } url
+ * @param { object } data
+ */
+export const post = (url, data = {}, config) => {
+  return isPromise('post', url, data, config)
+}
+
+function isPromise (type, url, param, config = {}) {
+  const paramType = {
+    get: {
+      method: type,
       url,
-      params,
-      ...config
-    }).then(response => {
+      params: param,
+      headers: {
+        // 控制加载提示
+        loading: config.loading || true
+      }
+    },
+    post: {
+      method: type,
+      url,
+      data: qs.stringify(param),
+      headers: {
+        'content-type': config.contentType || 'application/x-www-form-urlencoded',
+        // 控制加载提示
+        loading: config.loading || true
+      }
+    }
+  }
+
+  return new Promise((resolve, reject) => {
+    instance(paramType[type]).then(response => {
       resolve(response)
     }).catch(error => {
       reject(error)
     })
   })
 }
-
-/* 统一封装post请求  */
-export const post = (url, data, config = {}) => {
-  return new Promise((resolve, reject) => {
-    instance({
-      method: 'post',
-      url,
-      data,
-      ...config
-    }).then(response => {
-      resolve(response)
-    }).catch(error => {
-      reject(error)
-    })
-  })
-}
-
-/* 或者写成下面这样： Promise.resolve() 和 Promise.reject()返回的是promise对象，二者都是语法糖  */
-// export const post = (url, data, config = {}) => {
-//   return instance({
-//     method: 'post',
-//     url,
-//     data,
-//     ...config
-//   }).then(response => {
-//     return Promise.resolve(response)
-//   }).catch(error => {
-//     return Promise.reject(error)
-// })
-// }

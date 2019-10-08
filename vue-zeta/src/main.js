@@ -22,12 +22,7 @@ Vue.prototype.environments = config
 Vue.use(VueCordova, {
   optionTestKey: 'optionTestValue'
 })
-if (window.location.protocol === 'file:' || window.location.port === '3000') {
-  var cordovaScript = document.createElement('script')
-  cordovaScript.setAttribute('type', 'text/javascript')
-  cordovaScript.setAttribute('src', 'cordova.js')
-  document.body.appendChild(cordovaScript)
-}
+
 // UI组件使用
 Framework7.use(Framework7Vue)
 Framework7.use(Framework7Theme)
