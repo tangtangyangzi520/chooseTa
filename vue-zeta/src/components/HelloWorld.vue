@@ -36,7 +36,7 @@
 </template>
 
 <script>
-import { query, queryPost } from '../service/http/api'
+import { query } from '../service/http/api'
 export default {
   data () {
     return {
@@ -45,6 +45,7 @@ export default {
   },
   methods: {
     createSheet () {
+      console.log(this)
       const notification = this.$f7.notification.create({
         title: 'John Doe',
         text: 'Hello, how are you?',
@@ -55,27 +56,6 @@ export default {
         }
       })
       notification.open()
-      // const self = this
-      // self.sheet = self.$f7.sheet.create({
-      //   content: `
-      //     <div class="sheet-modal">
-      //       <div class="toolbar">
-      //         <div class="toolbar-inner justify-content-flex-end">
-      //           <a href="#" class="link sheet-close">Close</a>
-      //         </div>
-      //       </div>
-      //       <div class="sheet-modal-inner">
-      //         <div class="page-content">
-      //           <div class="block">
-      //             <p>This sheet modal was created dynamically</p>
-      //             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse faucibus mauris leo, eu bibendum neque congue non. Ut leo mauris, eleifend eu commodo a, egestas ac urna. Maecenas in lacus faucibus, viverra ipsum pulvinar, molestie arcu. Etiam lacinia venenatis dignissim...</p>
-      //           </div>
-      //         </div>
-      //       </div>
-      //     </div>
-      //   `.trim()
-      // })
-      // self.sheet.open()
     }
   },
   created: function () {
@@ -86,12 +66,12 @@ export default {
       console.log(res, '这是get响应的结果')
     })
 
-    queryPost({
-      params: {name: 10},
-      loading: true
-    }).then(res => {
-      console.log(res, '这是post响应的结果')
-    })
+    // queryPost({
+    //   params: {name: 10},
+    //   loading: true
+    // }).then(res => {
+    //   console.log(res, '这是post响应的结果')
+    // })
   }
 }
 </script>

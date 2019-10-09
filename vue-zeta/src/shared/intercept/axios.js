@@ -1,6 +1,7 @@
 import axios from 'axios'
 import config from '../../config/index'
-// let loading = null
+import { Preloader } from '../../components/F7/dialog'
+import { toast } from '../../components/F7/toast'
 
 // 创建axios实例，设置默认配置
 const instance = axios.create({
@@ -21,14 +22,12 @@ let httpCode = {
   502: '网关错误',
   504: '网关超时'
 }
+
+let loading
+
 /** 添加请求拦截器 **/
 instance.interceptors.request.use(config => {
-  console.log(config.headers.loading)
-  // 发起请求时加载全局loading，请求失败或有响应时会关闭
-  // loadingInstance = Loading.service({
-  //   spinner: 'fa fa-spinner fa-spin fa-3x fa-fw',
-  //   text: '拼命加载中...'
-  // })
+  loading = Preloader()
   // 导出文件
   if (config.url.includes('pur/contract/export')) {
     config.headers['responseType'] = 'blob'
@@ -44,36 +43,33 @@ instance.interceptors.request.use(config => {
 
 /** 添加响应拦截器  **/
 instance.interceptors.response.use(response => {
-  // loadingInstance.close()
+  loading.close()
   if (response.data.status === 200) {
     return Promise.resolve(response.data)
   } else {
-    // Message({
-    //   message: response.data.message,
-    //   type: 'error'
-    // })
+    toast({
+      text: response.data.message
+    })
     return Promise.reject(response.data.message)
   }
 }, error => {
-  // loadingInstance.close()
-  if (error.response) { // 根据请求失败的http状态码去给用户相应的提示
+  loading.close()
+  if (error.response) {
     let tips = error.response.status in httpCode ? httpCode[error.response.status] : error.response.data.message
-    console.log(tips)
-    // Message({
-    //   message: tips,
-    //   type: 'error'
-    // })
-    if (error.response.status === 401) { // token或者登陆失效情况下跳转到登录页面
+    toast({
+      text: tips
+    })
+    // token或者登陆失效情况
+    if (error.response.status === 401) {
       // router.push({
       //   path: `/login`
       // })
     }
     return Promise.reject(error)
   } else {
-    // Message({
-    //   message: '请求超时, 请刷新重试',
-    //   type: 'error'
-    // })
+    toast({
+      text: '请求超时, 请刷新重试'
+    })
     return Promise.reject(new Error('请求超时, 请刷新重试'))
   }
 })

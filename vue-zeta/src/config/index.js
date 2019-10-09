@@ -39,7 +39,7 @@ const config = {
     // 平台 安卓|ios
     platforms: crossEnv.platforms,
     // http请求超时时间
-    timeout: 200,
+    timeout: 3000,
     // 本地开启mock数据模拟
     devMock: true
   }

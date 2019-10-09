@@ -28,8 +28,10 @@ Framework7.use(Framework7Vue)
 Framework7.use(Framework7Theme)
 
 /* eslint-disable no-new */
-new Vue({
+const vue = new Vue({
   el: '#app',
   i18n,
   render: h => h(App)
 })
+
+export default vue
