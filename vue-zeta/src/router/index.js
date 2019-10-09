@@ -13,10 +13,27 @@
 //     }
 //   ]
 // })
+import checkAuth from '../shared/intercept/router'
 import HelloWorld from '@/components/HelloWorld'
+import about from '@/components/about'
+import home from '@/components/home'
+import login from '@/components/login'
 export default [
   {
     path: '/',
     component: HelloWorld
+  },
+  {
+    path: '/about',
+    component: about,
+    beforeEnter: checkAuth
+  },
+  {
+    path: '/home',
+    component: home
+  },
+  {
+    path: '(.*)',
+    component: login
   }
 ]

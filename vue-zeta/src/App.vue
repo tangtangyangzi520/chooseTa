@@ -15,7 +15,10 @@ export default {
         routes:routes,
         name: 'zeta',
         id: 'com.zetaApp.test',
-        theme: 'auto'
+        theme: 'auto',
+        view: {
+          pushState: true
+        }
       }
     }
   },

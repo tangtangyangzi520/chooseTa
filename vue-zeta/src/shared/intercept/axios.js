@@ -2,6 +2,7 @@ import axios from 'axios'
 import config from '../../config/index'
 import { Preloader } from '../../components/F7/dialog'
 import { toast } from '../../components/F7/toast'
+import vueVm from '../../main'
 
 // 创建axios实例，设置默认配置
 const instance = axios.create({
@@ -61,9 +62,7 @@ instance.interceptors.response.use(response => {
     })
     // token或者登陆失效情况
     if (error.response.status === 401) {
-      // router.push({
-      //   path: `/login`
-      // })
+      vueVm.$f7.views.main.router.navigate('/login')
     }
     return Promise.reject(error)
   } else {

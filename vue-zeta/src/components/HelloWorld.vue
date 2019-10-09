@@ -1,7 +1,7 @@
 
 <template>
   <f7-page :page-content="false">
-    <f7-navbar title="Tabbar" back-link="Back">
+    <f7-navbar title="Tabbar">
       <f7-nav-right>
         <f7-link icon-ios="f7:reload" icon-md="material:compare_arrows" @click="isBottom = !isBottom"></f7-link>
       </f7-nav-right>
@@ -14,7 +14,7 @@
     <f7-tabs>
       <f7-tab id="tab-1" class="page-content" tab-active>
         <f7-block>
-          <p>Tab 1 content</p>
+          <p><f7-link @click="$f7router.navigate('/about')">About</f7-link></p>
           <button @click="createSheet">打卡</button>
           <div class="heig">Tab 1 {{$t('login.username')}}</div>
         </f7-block>
