@@ -7,6 +7,7 @@ import VueCordova from 'vue-cordova'
 import Framework7 from 'framework7/framework7.esm.bundle.js'
 import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js'
 import Framework7Theme from 'framework7/css/framework7.bundle.css'
+import './assets/css/icons.css'
 import i18n from './i18n'
 import config from './config'
 

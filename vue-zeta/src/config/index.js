@@ -1,4 +1,5 @@
 const crossEnv = process.env
+console.log(process.env)
 const config = {
   production: {
     // 平台 安卓|ios

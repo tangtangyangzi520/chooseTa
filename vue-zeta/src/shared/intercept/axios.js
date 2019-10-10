@@ -69,7 +69,7 @@ instance.interceptors.response.use(response => {
     toast({
       text: '请求超时, 请刷新重试'
     })
-    return Promise.reject(new Error('请求超时, 请刷新重试'))
+    return Promise.reject(error)
   }
 })
 

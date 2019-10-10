@@ -3,7 +3,7 @@
   <f7-page :page-content="false">
     <f7-navbar title="Tabbar">
       <f7-nav-right>
-        <f7-link icon-ios="f7:reload" icon-md="material:compare_arrows" @click="isBottom = !isBottom"></f7-link>
+        <f7-link icon-ios="f7:ss" icon-aurora="f7:ss" icon-md="material:ss"  @click="isBottom = !isBottom"></f7-link>
       </f7-nav-right>
     </f7-navbar>
     <f7-toolbar tabbar :position="isBottom ? 'bottom' : 'top'">
@@ -63,7 +63,9 @@ export default {
   },
   mounted () {
     query({name: 10}).then(res => {
-      console.log(res, '这是get响应的结果')
+      console.log(res, '这是get响应的结果res')
+    }).catch(err => {
+      console.log(err, '这是get响应的结果err')
     })
 
     // queryPost({
