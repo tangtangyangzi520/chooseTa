@@ -1,11 +1,13 @@
 
 <template>
   <f7-page :page-content="false">
-    <f7-navbar title="Tabbar">
+    <!-- <f7-navbar title="Tabbar">
       <f7-nav-right>
         <f7-link icon-ios="f7:ss" icon-aurora="f7:ss" icon-md="material:ss"  @click="isBottom = !isBottom"></f7-link>
       </f7-nav-right>
-    </f7-navbar>
+    </f7-navbar> -->
+    <nav-bar></nav-bar>
+
     <f7-toolbar tabbar :position="isBottom ? 'bottom' : 'top'">
       <f7-link tab-link="#tab-1" tab-link-active>Tab 1</f7-link>
       <f7-link tab-link="#tab-2">Tab 2</f7-link>
@@ -37,11 +39,15 @@
 
 <script>
 import { query } from '../service/http/api'
+import NavBar from './F7/NavBar'
 export default {
   data () {
     return {
       isBottom: true
     }
+  },
+  components: {
+    NavBar
   },
   methods: {
     createSheet () {

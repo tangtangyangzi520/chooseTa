@@ -1,9 +1,10 @@
-export default function checkAuth (to, from, resolve, reject) {
+export function beforeEnter (to, from, resolve, reject) {
   const s = true
   if (s) {
     resolve()
   } else {
     reject()
+    this.navigate('/about')
   }
 }
 

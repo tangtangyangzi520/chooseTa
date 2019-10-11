@@ -1,5 +1,5 @@
 export default {
   login: {
-    username: 'username'
+    username: '用户名'
   }
 }
