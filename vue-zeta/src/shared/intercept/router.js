@@ -4,7 +4,7 @@ export function beforeEnter (to, from, resolve, reject) {
     resolve()
   } else {
     reject()
-    this.navigate('/about')
+    // this.navigate('/login')
   }
 }
 

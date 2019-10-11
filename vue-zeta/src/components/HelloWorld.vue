@@ -1,14 +1,15 @@
 
 <template>
-  <f7-page :page-content="false">
+  <f7-page>
+    <nav-bar></nav-bar>
     <!-- <f7-navbar title="Tabbar">
       <f7-nav-right>
         <f7-link icon-ios="f7:ss" icon-aurora="f7:ss" icon-md="material:ss"  @click="isBottom = !isBottom"></f7-link>
       </f7-nav-right>
     </f7-navbar> -->
-    <nav-bar></nav-bar>
+    <!-- <nav-bar :icon="{ios: 'house_fill', aurora: 'house_fill', material: 'house'}"></nav-bar> -->
 
-    <f7-toolbar tabbar :position="isBottom ? 'bottom' : 'top'">
+    <!-- <f7-toolbar tabbar :position="isBottom ? 'bottom' : 'top'">
       <f7-link tab-link="#tab-1" tab-link-active>Tab 1</f7-link>
       <f7-link tab-link="#tab-2">Tab 2</f7-link>
       <f7-link tab-link="#tab-3">Tab 3</f7-link>
@@ -33,7 +34,7 @@
           ...
         </f7-block>
       </f7-tab>
-    </f7-tabs>
+    </f7-tabs> -->
   </f7-page>
 </template>
 
@@ -68,6 +69,7 @@ export default {
     // console.log(this.environments)
   },
   mounted () {
+    console.log(1111)
     query({name: 10}).then(res => {
       console.log(res, '这是get响应的结果res')
     }).catch(err => {

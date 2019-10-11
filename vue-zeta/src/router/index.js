@@ -15,25 +15,23 @@
 // })
 import { beforeEnter } from '../shared/intercept/router'
 import HelloWorld from '@/components/HelloWorld'
-import about from '@/components/about'
-import home from '@/components/home'
-import login from '@/components/login'
+import Home from '@/views/Home'
+import Login from '@/views/login/LoginPage'
+
 export default [
   {
     path: '/',
-    component: HelloWorld,
+    component: Home,
     beforeEnter: beforeEnter
   },
   {
-    path: '/about',
-    component: about
+    path: '/login',
+    component: Login,
+    beforeEnter: beforeEnter
   },
   {
-    path: '/home',
-    component: home
-  },
-  {
-    path: '(.*)',
-    component: login
+    path: '/helloworld',
+    component: HelloWorld,
+    beforeEnter: beforeEnter
   }
 ]

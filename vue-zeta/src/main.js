@@ -10,6 +10,9 @@ import Framework7Theme from 'framework7/css/framework7.bundle.css'
 import './assets/css/icons.css'
 import i18n from './i18n'
 import config from './config'
+// 全局注册公共组件
+import { useCommonComponents } from './components/index'
+useCommonComponents(Vue)
 
 Vue.use(VueI18n)
 Vue.config.productionTip = false
