@@ -7,7 +7,7 @@
 
 <script>
 /* eslint-disable */
-import routes from './router/index.js';
+import routes from './router/index';
 import cordovaApp from './shared/cordova/index'
 // import Vue from 'vue'
 export default {
@@ -18,10 +18,10 @@ export default {
         id: 'com.zetaApp.test',
         theme: 'auto',
         view: {
-          iosDynamicNavbar: false,
-          xhrCache: false,
-          pushState: true,
-          pushStateSeparator: '#',
+          // iosDynamicNavbar: false,
+          // xhrCache: false,
+          // pushState: true,
+          // pushStateSeparator: '#',
         },
         routes: [
           ...routes
@@ -31,6 +31,7 @@ export default {
   },
   mounted () {
     this.$f7ready((f7) => {
+      console.log(f7)
       // Init cordova APIs (see cordova-app.js)
       cordovaApp.init(f7);
     });

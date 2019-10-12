@@ -1,7 +1,9 @@
 export function beforeEnter (to, from, resolve, reject) {
   const s = true
   if (s) {
-    resolve()
+    resolve({
+      url: '/login'
+    })
   } else {
     reject()
     // this.navigate('/login')

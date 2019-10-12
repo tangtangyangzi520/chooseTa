@@ -14,8 +14,7 @@
     "build": "node build/build.js",
     "build:Ios": "cross-env platforms=ios NODE_ENV=development node build/build.js",
     "build:Android": "cross-env platforms=android NODE_ENV=development node build/build.js",
-    "dps": "node ./dps/bin/dps.js start",
-    "mork": ""
+    "dps": "node ./dps/bin/dps.js start"
   },
   "app": {
     "alias": "dps"
