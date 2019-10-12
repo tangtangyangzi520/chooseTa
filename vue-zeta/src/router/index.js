@@ -16,7 +16,7 @@
 import { beforeEnter } from '../shared/intercept/router'
 import HelloWorld from '@/components/HelloWorld'
 import Home from '@/views/Home'
-import Login from '@/views/login/LoginPage'
+import loginRouter from './login'
 
 export default [
   {
@@ -25,13 +25,9 @@ export default [
     beforeEnter: beforeEnter
   },
   {
-    path: '/login',
-    component: Login,
-    beforeEnter: beforeEnter
-  },
-  {
     path: '/helloworld',
     component: HelloWorld,
     beforeEnter: beforeEnter
-  }
+  },
+  ...loginRouter
 ]
