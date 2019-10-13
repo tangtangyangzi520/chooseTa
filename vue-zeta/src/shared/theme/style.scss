@@ -1,0 +1,21 @@
+:root{
+  --themeColor: #ed795a;
+}
+
+/*
+  根据UI设计图自定义样式
+*/
+.dialog.verticalDialog{
+  .dialog-buttons{
+    position: initial;
+  }
+  .dialog-button:nth-child(1){
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #ddd;
+    width: 50px;
+    border-radius: 100%;
+    height: 50px;
+  }
+}

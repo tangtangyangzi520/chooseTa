@@ -8,11 +8,15 @@ import Framework7 from 'framework7/framework7.esm.bundle.js'
 import Framework7Vue from 'framework7-vue/framework7-vue.esm.bundle.js'
 import Framework7Theme from 'framework7/css/framework7.bundle.css'
 import './assets/css/icons.css'
+// 全局引入主题样式
+import './shared/theme/style.scss'
+// 配置国际化
 import i18n from './i18n'
 import config from './config'
 
-// 全局注册公共组件
+// 设置全局字体大小
 import { setHtmlFontSize } from '../src/utils'
+// 全局注册公共组件
 import { useCommonComponents } from './components/index'
 useCommonComponents(Vue)
 setHtmlFontSize()

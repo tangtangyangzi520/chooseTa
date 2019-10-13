@@ -1,19 +1,29 @@
 <template>
-  <f7-page name="loginhome">
+  <f7-page :page-content="false" name="loginhome">
+    <nav-bar></nav-bar>
     <div class="cover-block">
         <div class="logo"></div>
     </div>
     <div class="field-block">
       <div class="field-btns">
-        <button class="col button button-large color-white button-round">登录</button>
-        <button class="col button button-large button-fill button-round">注册</button>
+        <buttons v-on:clickEvents="$f7router.navigate('/login')" :config="{text: '登录', class: 'login-fill'}"></buttons>
+        <buttons v-on:clickEvents="$f7router.navigate('/register')" :config="{text: '手机号注册', class: 'register-fill'}"></buttons>
       </div>
       <div class="other-link">
-        语言: 简体中文
+        <span @click="setLanguage">语言: 简体中文<span class="valueEl"></span></span>
+        <f7-list-item title="Fruit" smart-select>
+          <select name="fruits">
+            <option value="apple" selected>Apple</option>
+            <option value="pineapple">Pineapple</option>
+            <option value="pear">Pear</option>
+            <option value="orange">Orange</option>
+            <option value="melon">Melon</option>
+            <option value="peach">Peach</option>
+            <option value="banana">Banana</option>
+          </select>
+        </f7-list-item>
       </div>
     </div>
-    <!-- <nav-bar title="loginhome"></nav-bar>
-    <f7-link @click="$f7router.navigate('/login')">About</f7-link> -->
   </f7-page>
 </template>
 
@@ -22,13 +32,31 @@ export default {
   data () {
     return {}
   },
-  mounted: function () {
-    console.log('loginhome', this)
+  methods: {
+    setLanguage () {
+      const smartSelect = this.$f7.smartSelect
+      const res = smartSelect.create({
+        el: '.smart-select',
+        pageTitle: '123',
+        openIn: 'popup',
+        on: {
+          opened: function () {
+            console.log('Smart select opened')
+          }
+        }
+      }).open()
+      console.log(this.$f7route)
+    }
+  },
+  mounted () {
+    this.$f7ready((f7) => {
+      console.log(f7.device)
+    })
   }
 }
 </script>
 
-<style scoped lang="scss">
+<style scope lang="scss">
   .cover-block{
     position: relative;
     height: 100%;
@@ -48,7 +76,21 @@ export default {
   .field-block{
     position: absolute;
     bottom: 0.88rem;
-    left: 0.15rem;
-    right: 0.15rem;
+    left: 0.3rem;
+    right: 0.3rem;
+  }
+  .login-fill{
+    margin-bottom: 0.3rem;
+    color: #fff;
+    background: #ddd;
+  }
+  .register-fill{
+    color: #fff;
+    margin-bottom: 0.3rem;
+    background: var(--themeColor);
+  }
+  .other-link{
+    text-align: center;
+    color: #fff;
   }
 </style>

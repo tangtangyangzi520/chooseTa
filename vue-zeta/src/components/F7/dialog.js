@@ -4,6 +4,29 @@ const texts = 'Hello Zetar'
 const titles = 'Zetar'
 
 /**
+ * 根据ui设计图自定义样式
+ * @param { object } params
+ * @param { fn } callback
+ */
+const dialog = (params = {}, callback) => {
+  if (vueVm) {
+    vueVm.$f7.dialog
+      .create({
+        title: params.title || titles,
+        text: params.text || texts,
+        content: params.content || '',
+        cssClass: `verticalDialog ${params.class}`,
+        buttons: params.button || [],
+        verticalButtons: params.vertical || true,
+        onClick: function (dialog, e) {
+          if (callback) callback(e, dialog)
+        }
+      })
+      .open()
+  }
+}
+
+/**
  * Alert
  * @param { object } params
  * @param { fn } callback
@@ -87,4 +110,4 @@ function closeDialog (dialog, time = 3000) {
   }, time)
 }
 
-export { Alert, Confirm, Prompt, Preloader, Progress }
+export { Alert, Confirm, Prompt, Preloader, Progress, dialog }
