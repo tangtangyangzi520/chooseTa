@@ -15,7 +15,7 @@ export default function (params, fn) {
       param = params
     }
     param.type = param.type || 'radio'
-    const itemList = param.items || ['item1', 'item2', 'item3']
+    const itemList = param.items || ['英文', '简体', '繁体']
     let simple = ''
     itemList.forEach((v, k) => {
       simple += `<li style="${param.index === k ? 'color: #f8b43e' : 'color: #999'}" class="item-link list-button">${v}</li>`
