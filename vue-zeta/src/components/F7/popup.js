@@ -25,7 +25,7 @@ export default function (params, fn) {
         <div style="top: inherit;display: block;max-height: 80%;bottom: 0;height: ${param.height || '3.49rem'}" class="popup ${param.class || 'popup-handler'}">
             <div class="view">
             <div class="page">
-                <div class="navbar" style="height: 0.88rem;background: #fff">
+                <div class="navbar" style="height: 44px;background: #fff">
                     <div class="navbar-inner">
                         <div class="left">
                         <a class="link popup-close" style="font-size: 0.28rem;color: #f8b43e;">${param.close || '取消'}</a>

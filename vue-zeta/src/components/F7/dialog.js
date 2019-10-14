@@ -12,8 +12,8 @@ const dialog = (params = {}, callback) => {
   if (vueVm) {
     vueVm.$f7.dialog
       .create({
-        title: params.title || titles,
-        text: params.text || texts,
+        title: params.title,
+        text: params.text,
         content: params.content || '',
         cssClass: `verticalDialog ${params.class}`,
         buttons: params.button || [],

@@ -17,7 +17,11 @@
         </f7-list-input>
       </f7-list>
     </div>
-    <f7-button v-on:click="openPopover" large fill class="login-btn">立即重置</f7-button>
+    <f7-button large fill class="login-btn">立即重置</f7-button>
+    <f7-button v-on:click="openPopover('', '注册后不能修改性别，确定么？', '确定')" large fill class="login-btn">确定性别</f7-button>
+    <f7-button v-on:click="openPopover('', '你输入的邀请码不存在', '免费申请邀请码', true)" large fill class="login-btn">免费申请邀请码</f7-button>
+    <f7-button v-on:click="openPopover('成功递交申请', '我们将尽快处理你的申请。如果通过审核，你会在消息中心收到我们发送的邀请码', '好的')" large fill class="login-btn">成功递交申请</f7-button>
+    <f7-button v-on:click="openPopover('邀请码验证通过', '欢迎加入ZETA！请勿把你的账户泄露给他人，一经发现登录异常，账户会被自动冻结。', '确定')" large fill class="login-btn">邀请码验证通过</f7-button>
   </f7-page>
 </template>
 
@@ -32,14 +36,17 @@ export default {
     }
   },
   methods: {
-    openPopover () {
+    openPopover (title, text, btn, flag) {
       dialog({
+        title,
+        text,
+        content: flag ? '<div class="dialog-input"><input type="text" placeholder="重新输入"></div>' : '',
         button: [
           {
-            text: 'X'
+            text: '<i class="close-btn"></i>'
           },
           {
-            text: 'Button 2'
+            text: btn
           }
         ]}, (e) => {
         console.log(e)
