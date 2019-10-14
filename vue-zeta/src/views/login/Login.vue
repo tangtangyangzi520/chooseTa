@@ -1,22 +1,20 @@
 <template>
-  <f7-page :page-content="false" name="Login">
-    <nav-bar title="登录" backLink></nav-bar>
-    <div class="page-content">
-      <div class="reset">登录</div>
-      <f7-list no-hairlines-md class="input-con">
-        <f7-list-input outline label="登录账号" floating-label type="text" class="text-con" :value="username"  @input="username = $event.target.value" placeholder="登录账号" clear-button >
-          <f7-icon icon="demo-list-icon" slot="media"></f7-icon>
-        </f7-list-input>
-        <f7-list-input outline label="登录密码" floating-label type="password" class="text-con" :value="password"  @input="password = $event.target.value" placeholder="登录密码" clear-button>
-          <f7-icon icon="demo-list-icon" slot="media"></f7-icon>
-        </f7-list-input>
-      </f7-list>
-      <f7-button large fill class="login-btn">登录</f7-button>
-      <div class="bottom-text">
-        <f7-link @click="$f7router.navigate('/reset')">忘记密码</f7-link>
-        <span></span>
-        <f7-link @click="$f7router.navigate('/register')">马上注册</f7-link>
-      </div>
+  <f7-page @page:afterin="init" name="Login">
+    <f7-navbar title="登录" back-link></f7-navbar>
+    <div class="reset">登录</div>
+    <f7-list no-hairlines-md class="input-con">
+      <f7-list-input outline label="登录账号" floating-label type="text" class="text-con" :value="username"  @input="username = $event.target.value" placeholder="登录账号" clear-button >
+        <f7-icon icon="demo-list-icon" slot="media"></f7-icon>
+      </f7-list-input>
+      <f7-list-input outline label="登录密码" floating-label type="password" class="text-con" :value="password"  @input="password = $event.target.value" placeholder="登录密码" clear-button>
+        <f7-icon icon="demo-list-icon" slot="media"></f7-icon>
+      </f7-list-input>
+    </f7-list>
+    <f7-button large fill class="login-btn">登录</f7-button>
+    <div class="bottom-text">
+      <f7-link @click="$f7router.navigate('/reset')">忘记密码</f7-link>
+      <span></span>
+      <f7-link @click="$f7router.navigate('/register')">马上注册</f7-link>
     </div>
   </f7-page>
 </template>
@@ -29,8 +27,11 @@ export default {
       password: ''
     }
   },
-  mounted () {
-    console.log('Login')
+  methods: {
+    init () {
+      // const bar = document.querySelector('.navbar')
+      // bar.style.opacity = '1'
+    }
   }
 }
 </script>

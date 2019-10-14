@@ -18,3 +18,12 @@ function setFontSize () {
   const CW = El.clientWidth
   El.style.fontSize = CW >= 750 ? '100px' : 100 * (CW / 750) + 'px'
 }
+
+export const isFunction = (val) => {
+  const type = Object.prototype.toString.call(val)
+  if (type === '[object Function]') {
+    return true
+  } else {
+    return false
+  }
+}

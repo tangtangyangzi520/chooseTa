@@ -66,4 +66,7 @@ export default {
 </script>
 
 <style>
+.s.navbar{
+  opacity: 0;
+}
 </style>

@@ -1,57 +1,33 @@
 <template>
   <f7-page :page-content="false" name="loginhome">
-    <nav-bar></nav-bar>
     <div class="cover-block">
         <div class="logo"></div>
     </div>
     <div class="field-block">
       <div class="field-btns">
         <buttons v-on:clickEvents="$f7router.navigate('/login')" :config="{text: '登录', class: 'login-fill'}"></buttons>
-        <buttons v-on:clickEvents="$f7router.navigate('/register')" :config="{text: '手机号注册', class: 'register-fill'}"></buttons>
+        <buttons v-on:clickEvents="$f7router.navigate('/register')" :config="{text: '注册', class: 'register-fill'}"></buttons>
       </div>
       <div class="other-link">
-        <span @click="setLanguage">语言: 简体中文<span class="valueEl"></span></span>
-        <f7-list-item title="Fruit" smart-select>
-          <select name="fruits">
-            <option value="apple" selected>Apple</option>
-            <option value="pineapple">Pineapple</option>
-            <option value="pear">Pear</option>
-            <option value="orange">Orange</option>
-            <option value="melon">Melon</option>
-            <option value="peach">Peach</option>
-            <option value="banana">Banana</option>
-          </select>
-        </f7-list-item>
+        <!-- <smart-select></smart-select> -->
+        <span @click="setLanguage">语言: 简体中文<i class="f7-icons">chevron_down</i></span>
       </div>
     </div>
   </f7-page>
 </template>
 
 <script>
+import popup from '../../components/F7/popup'
 export default {
   data () {
     return {}
   },
   methods: {
     setLanguage () {
-      const smartSelect = this.$f7.smartSelect
-      const res = smartSelect.create({
-        el: '.smart-select',
-        pageTitle: '123',
-        openIn: 'popup',
-        on: {
-          opened: function () {
-            console.log('Smart select opened')
-          }
-        }
-      }).open()
-      console.log(this.$f7route)
+      popup((res) => {
+        console.log(res)
+      })
     }
-  },
-  mounted () {
-    this.$f7ready((f7) => {
-      console.log(f7.device)
-    })
   }
 }
 </script>
@@ -81,16 +57,22 @@ export default {
   }
   .login-fill{
     margin-bottom: 0.3rem;
-    color: #fff;
-    background: #ddd;
+    color: var(--theme333);
+    background: var(--themefff);
   }
   .register-fill{
-    color: #fff;
-    margin-bottom: 0.3rem;
-    background: var(--themeColor);
+    color: var(--themefff);
+    margin-bottom: 0.86rem;
+    background: var(--theme7f7e84);
   }
   .other-link{
     text-align: center;
     color: #fff;
+    line-height: 0.24rem;
+    .f7-icons{
+      font-size: 0.36rem;
+      vertical-align: bottom;
+      margin-left: 0.36rem
+    }
   }
 </style>

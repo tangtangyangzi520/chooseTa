@@ -1,6 +1,6 @@
 <template>
   <f7-page name="register">
-    <nav-bar title="重置密码" backLink></nav-bar>
+    <f7-navbar title="重置密码" backLink></f7-navbar>
     <div class="reset">重置密码</div>
     <div class="input-con">
       <f7-list no-hairlines-md>

@@ -1,25 +1,23 @@
 <template>
-  <f7-page :page-content="false" name="register">
-    <nav-bar title="手机号码注册" backLink></nav-bar>
-    <div class="page-content">
-      <div class="reset">手机号码注册</div>
-      <div class="input-con">
-        <f7-list no-hairlines-md>
-          <f7-list-input outline label="手机号" class="text-con" floating-label type="text" :value="name" @input="name = $event.target.value" placeholder="手机号" clear-button>
+  <f7-page name="register">
+    <f7-navbar title="手机号码注册" back-link></f7-navbar>
+    <div class="reset">手机号码注册</div>
+    <div class="input-con">
+      <f7-list no-hairlines-md>
+        <f7-list-input outline label="手机号" class="text-con" floating-label type="text" :value="name" @input="name = $event.target.value" placeholder="手机号" clear-button>
+        </f7-list-input>
+        <div class="verify-con">
+          <f7-list-input outline label="验证码"  floating-label type="text" class="verify text-con" :value="code" @input="code = $event.target.value" placeholder="请输入" clear-button>
           </f7-list-input>
-          <div class="verify-con">
-            <f7-list-input outline label="验证码"  floating-label type="text" class="verify text-con" :value="code" @input="code = $event.target.value" placeholder="请输入" clear-button>
-            </f7-list-input>
-            <f7-button large fill class="code">获取验证码</f7-button>
-          </div>
-        </f7-list>
-        <f7-list no-hairlines-md>
-          <f7-list-input outline label="密码" class="text-con" floating-label type="text" :value="password" @input="password = $event.target.value" placeholder="密码" clear-button>
-          </f7-list-input>
-        </f7-list>
-      </div>
-      <f7-button large fill class="login-btn" v-on:click="$f7router.navigate('/login')">注册</f7-button>
+          <f7-button large fill class="code">获取验证码</f7-button>
+        </div>
+      </f7-list>
+      <f7-list no-hairlines-md>
+        <f7-list-input outline label="密码" class="text-con" floating-label type="text" :value="password" @input="password = $event.target.value" placeholder="密码" clear-button>
+        </f7-list-input>
+      </f7-list>
     </div>
+    <f7-button large fill class="login-btn" v-on:click="$f7router.navigate('/login')">注册</f7-button>
   </f7-page>
 </template>
 
